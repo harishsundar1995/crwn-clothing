@@ -1,10 +1,12 @@
-imp
-import './shop.styles.scss'
+import { Fragment, useContext } from 'react'
+import { CategoriesContext } from '../../../contexts/categories.context'
+import CategoryPreview from '../../category-preview/category-preview.component'
 
-const Shop = () => {
+
+const CategoriesPreview = () => {
     const { categoriesMap } = useContext(CategoriesContext)
     return (
-        <div className='shop-container'>
+        <Fragment>
 
             {
                 Object.keys(categoriesMap).map((title) => {
@@ -13,8 +15,8 @@ const Shop = () => {
                 })
             }
 
-        </div>
+        </Fragment>
     )
 }
 
-export default Shop
+export default CategoriesPreview
